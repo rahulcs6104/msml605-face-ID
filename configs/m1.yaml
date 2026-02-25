@@ -1,0 +1,24 @@
+seed: 42
+split_policy: "70% train split - 15% validation split - 15% test split"
+train_ratio:  0.70
+val_ratio:  0.15
+test_ratio:  0.15
+
+pairs:
+  positive_per_split: 600
+  negative_per_split:  600
+
+data:
+  tfds_name: "lfw"
+  cache_dir: "data/tfds"
+  images_dir: "data/lfw_images"
+
+outputs:
+  manifest_path: "outputs/manifest.json"
+  splits_path: "outputs/splits.json"
+  pairs_dir: "outputs/pairs"
+  bench_dir: "outputs/bench"
+
+benchmark:
+  N: 1000
+  D: 128
