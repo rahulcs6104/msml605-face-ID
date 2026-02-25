@@ -1,6 +1,7 @@
 # msml605-face-ID
+# stuff to pip install(later add to requirements.txt):
 
-
+pip install --upgrade tensorflow-datasets
 # creating a venv in powershell:
 py -m venv .venv
 
@@ -19,3 +20,6 @@ python scripts/ingest_dataset.py --config configs/m1.yaml
             OR
             
 python3 scripts/ingest_dataset.py --config configs/m1.yaml
+
+# run to create pairs 
+python scripts/create_pairs.py --config configs/m1.yaml

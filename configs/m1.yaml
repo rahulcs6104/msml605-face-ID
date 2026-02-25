@@ -4,9 +4,13 @@ train_ratio:  0.70
 val_ratio:  0.15
 test_ratio:  0.15
 
+
+# each pair will look like this(left_path, right_path, label, split)
 pairs:
-  positive_per_split: 600
+  positive_per_split: 600 
   negative_per_split:  600
+
+
 
 data:
   tfds_name: "lfw"
