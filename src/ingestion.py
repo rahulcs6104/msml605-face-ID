@@ -1,6 +1,10 @@
 import json
 from pathlib import Path
 
+import numpy as np
+from PIL import Image
+import tensorflow_datasets as tfds
+
 
 def load_lfw_and_save_images(tfds_name: str,cache_dir:str, images_dir:str) -> dict:
     print("Loading the dataset")
