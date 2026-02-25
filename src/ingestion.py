@@ -6,7 +6,7 @@ from PIL import Image
 import tensorflow_datasets as tfds
 
 
-def load_lfw_and_save_images(tfds_name: str,cache_dir:str, images_dir:str) -> dict:
+def load_and_save_dataset(tfds_name: str,cache_dir:str, images_dir:str) -> dict:
     print("Loading the dataset")
     images_dir = Path(images_dir)
 
@@ -66,7 +66,6 @@ def split_identities(i_paths: dict, train_ratio: float, val_ratio: float, seed: 
         "test": test_ids}
     return splits
 
-
 def write_manifest(
     manifest_path: str,
     splits_path: str,
@@ -76,9 +75,6 @@ def write_manifest(
     i_paths: dict,
     data_source: dict,
 ) -> None:
-    """Write manifest.json (counts/seed/policy) and splits.json (identity lists) to disk."""
-
-    # ── Counts ──
     counts = {}
     for split_name, identities in splits.items():
         counts[split_name] = {

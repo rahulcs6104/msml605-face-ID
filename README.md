@@ -12,3 +12,8 @@ pip install -r requirements.txt
 
 # to verify:
 pip list
+
+# To run and load the dataset we have to run the following command:
+python scripts/ingest_dataset.py --config configs/m1.yaml
+            OR
+python3 scripts/ingest_dataset.py --config configs/m1.yaml
