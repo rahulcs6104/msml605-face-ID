@@ -43,7 +43,7 @@ def main():
     for split_name, identity_list in splits.items():
         split_seed = seed + hash(split_name) % 1000
 
-        pairs = generate_pairs(split_name=split_name,i_paths=i_paths,identity_list=identity_list,n_pos=n_pos,n_neg=n_neg,seed=split_seed,)
+        pairs = generate_pairs(split_name=split_name,identity_paths=i_paths,identity_list=identity_list,n_pos=n_pos,n_neg=n_neg,seed=split_seed,)
         out_path =Path(pairs_dir)/f"{split_name}_pairs.csv"
         save_pairs(pairs,str(out_path))
 

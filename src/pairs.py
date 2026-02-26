@@ -20,9 +20,9 @@ def generate_pairs(split_name: str,identity_paths: dict,identity_list: list,n_po
 
     #postive pairs (the left and the right image will be from the same person)
     pos_candidates = []
-    for i in identity_list:
-        imgs = sorted(identity_paths[i]) 
-        for i in range(len(imgs)):
+    for person in identity_list:           # renamed to person
+        imgs = sorted(identity_paths[person])
+        for i in range(len(imgs)):         # i is now safe to use here
             for j in range(i + 1, len(imgs)):
                 pos_candidates.append((imgs[i], imgs[j]))
 
