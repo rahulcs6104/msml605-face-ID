@@ -37,3 +37,7 @@ python3 scripts/ingest_dataset.py --config configs/m1.yaml
 
 # run to create pairs 
 python3 scripts/create_pairs.py --config configs/m1.yaml
+
+# to run the benchmark file that compares euclidean and cosine:
+
+python3 scripts/benchmark.py --config configs/m1.yaml

@@ -44,7 +44,7 @@ def run_benchmark(N: int, D: int, seed: int):
 
     print(f"  Loop time        : {time_cosine_loop:.4f}s")
     print(f"  Vectorized time  : {time_cosine_vec:.4f}s")
-    print(f"  Speedup          : {speed_c:.1f}x")
+    print(f"  Speed          : {speed_c:.1f}x")
     print(f"  Max abs diff     : {cosine_max_diff:.2e}  (tolerance={cos_tolerance})")
     print(f"  Correctness check: {'PASSED' if cosine_correct else 'FAILED'}")
 
@@ -78,18 +78,11 @@ def run_benchmark(N: int, D: int, seed: int):
 
     print(f"  Loop time        : {time_euclide_loop:.4f}s")
     print(f"  Vectorized time  : {time_euclidean_vec:.4f}s")
-    print(f"  Speedup          : {speed_e:.1f}x")
+    print(f"  Speed            : {speed_e:.1f}x")
     print(f"  Max abs diff     : {euc_max_diff:.2e}  (tolerance={euc_tolerance})")
     print(f"  Correctness check: {'PASSED' if euc_correct else 'FAILED'}")
 
-    results["euclidean"] = {
-        "loop_time_s": round(time_euclide_loop, 6),
-        "vec_time_s": round(time_euclidean_vec, 6),
-        "speedup_x": round(speed_e, 2),
-        "max_abs_diff": euc_max_diff,
-        "tolerance": euc_tolerance,
-        "correctness_pass": euc_correct,
-    }
+    results["euclidean"] = {"loop_time_s": round(time_euclide_loop, 6),"vec_time_s": round(time_euclidean_vec, 6),"speedup_x": round(speed_e, 2),"max_abs_diff": euc_max_diff,"tolerance": euc_tolerance,"correctness_pass": euc_correct}
 
     print("\n")
     print("======================================================================================================================================")
