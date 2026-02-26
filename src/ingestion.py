@@ -7,17 +7,13 @@ import tensorflow_datasets as tfds
 
 
 def load_and_save_dataset(tfds_name: str,cache_dir:str, images_dir:str) -> dict:
-    print("Loading the dataset")
+    print("loading the dataset")
     images_dir = Path(images_dir)
-
-    
     ds,info = tfds.load(tfds_name,split="train",with_info=True,data_dir=cache_dir,shuffle_files=False,)
-    label_names = info.features["label"].names  
     #create persons like eg: rahul
     person: dict = {}
     for global_idx, example in enumerate(ds):
-        label_id =int(example["label"].numpy())
-        name =label_names[label_id]
+        name = example["label"].numpy().decode("utf-8")
         img =  example["image"].numpy()
         person.setdefault(name,[]).append((global_idx,img))
     #put each persons image into their respective directories

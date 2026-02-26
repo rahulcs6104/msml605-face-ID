@@ -22,7 +22,7 @@ def main():
 
     #dividing identities
     splits = split_identities(
-        identity_paths=identity_paths,
+        i_paths=identity_paths,
         train_ratio=cfg["train_ratio"],
         val_ratio=cfg["val_ratio"],
         seed=cfg["seed"],
@@ -40,7 +40,7 @@ def main():
         seed=cfg["seed"],
         split_policy=cfg["split_policy"],
         splits=splits,
-        identity_paths=identity_paths,
+        i_paths=identity_paths,
         data_source={
             "tfds_name": cfg["data"]["tfds_name"],
             "cache_dir": cfg["data"]["cache_dir"],

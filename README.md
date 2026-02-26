@@ -2,18 +2,31 @@
 # stuff to pip install(later add to requirements.txt):
 
 pip install --upgrade tensorflow-datasets
-# creating a venv in powershell:
+# -----------------------------------------------------------------------------
+
+# Before we create a venv make sure you have Python 3.11.14 or python 3.11 installed (any other version will not download the dataset)
+
+
+
+## creating a venv:
+# in powershell
 py -m venv .venv
 
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
 .\.venv\Scripts\Activate.ps1
 
+# in MAC
+python3 -m venv .venv
+source .venv/bin/activate
+
 pip install --upgrade pip
 pip install -r requirements.txt
 
 # to verify:
 pip list
+# -----------------------------------------------------------------------------
+
 
 # To run and load the dataset we have to run the following command:
 python scripts/ingest_dataset.py --config configs/m1.yaml
