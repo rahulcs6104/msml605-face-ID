@@ -36,4 +36,4 @@ python scripts/ingest_dataset.py --config configs/m1.yaml
 python3 scripts/ingest_dataset.py --config configs/m1.yaml
 
 # run to create pairs 
-python scripts/create_pairs.py --config configs/m1.yaml
+python3 scripts/create_pairs.py --config configs/m1.yaml
