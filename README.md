@@ -27,6 +27,15 @@ msml605-face-verification/
 └── outputs/                  # GITIGNORED — has the pairs , benchmark results , manifest , split and csv
 ```
 
+## verify python version 
+
+make sure you have python 3.11 version downloaded , I had problem with python 3.9 and 3.13 to download the dataset
+
+make sure if command runs with python or python3 
+
+run ``` python --version ``` or ``` python3 --version ``` 
+This will let you know if you have the correct python version (3.11) installed and if you have the run the command using python or python3 commands that are below
+
 
 ## How to Run
 
@@ -48,9 +57,7 @@ pip list
 
 ### 2) To ingest the LFW Dataset
 ``` python scripts/ingest_dataset.py --config configs/m1.yaml ```
-
             OR
-            
 ```python3 scripts/ingest_dataset.py --config configs/m1.yaml ```
 
 Outputs:
@@ -59,9 +66,9 @@ Outputs:
 - "data/lfw_images/<name>/<idx>.jpg" => all the saved images
 
 ### 3) To create pairs 
-python scripts/create_pairs.py --config configs/m1.yaml
+``` python scripts/create_pairs.py --config configs/m1.yaml  ```
             OR
-python3 scripts/create_pairs.py --config configs/m1.yaml
+``` python3 scripts/create_pairs.py --config configs/m1.yaml ```
 
 Outputs:
 - "outputs/pairs/train_pairs.csv"
@@ -71,15 +78,29 @@ Outputs:
 Structure of each output CSV file (columns) => path_to_left_image , path_to_right_image , label , split
 
 ### 4) to run the benchmark file that compares euclidean and cosine:
-python scripts/benchmark.py --config configs/m1.yaml
+``` python scripts/benchmark.py --config configs/m1.yaml ```
             OR
-python3 scripts/benchmark.py --config configs/m1.yaml
+``` python3 scripts/benchmark.py --config configs/m1.yaml ```
 
 Outputs:
 - "outputs/bench/bench_results.json" => will have the time taken to run cosine and euclidean 
 
 # 5) To run the tests 
-python3 -m pytest tests/ -v 
+``` python3 -m pytest tests/ -v ```
 
 # How to run this repo form scratch:
+``` 
 git clone https://github.com/rahulcs6104/msml605-face-ID.git
+cd msml605-face-ID
+git checkout milestone1
+```
+make sure to put appropriate commands for Mac or windows ( refer point 1) Im going to go with Mac
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python3 scripts/ingest_dataset.py --config configs/m1.yaml
+python3 scripts/create_pairs.py --config configs/m1.yaml
+python3 scripts/benchmark.py --config configs/m1.yaml
+python3 -m pytest tests/ -v
