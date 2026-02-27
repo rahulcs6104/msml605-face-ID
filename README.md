@@ -41,3 +41,6 @@ python3 scripts/create_pairs.py --config configs/m1.yaml
 # to run the benchmark file that compares euclidean and cosine:
 
 python3 scripts/benchmark.py --config configs/m1.yaml
+
+# To run the tests 
+python3 -m pytest tests/ -v
