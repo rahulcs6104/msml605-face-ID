@@ -46,13 +46,10 @@ pip install -r requirements.txt
 
 pip list
 
-# -----------------------------------------------------------------------------
-
-
 ### 2) To ingest the LFW Dataset
-python scripts/ingest_dataset.py --config configs/m1.yaml
+``` python scripts/ingest_dataset.py --config configs/m1.yaml ```
             OR
-python3 scripts/ingest_dataset.py --config configs/m1.yaml
+```python3 scripts/ingest_dataset.py --config configs/m1.yaml ```
 
 Outputs:
 - "outputs/manifest.json" => seed, split policy, counts, data source used in this run
