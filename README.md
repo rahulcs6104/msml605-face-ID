@@ -42,6 +42,7 @@ This will let you know if you have the correct python version (3.11) installed a
 ### 1) virtual environment setup (venv)
 
 **Windows (in powershell)**
+
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
@@ -53,7 +54,7 @@ pip install -r requirements.txt
 
 ### to verify:
 
-pip list
+``` pip list ```
 
 ### 2) To ingest the LFW Dataset
 ``` python scripts/ingest_dataset.py --config configs/m1.yaml ```
