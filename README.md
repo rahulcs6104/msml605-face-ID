@@ -1,6 +1,6 @@
 # MSML 605 — Face Verification (Milestone 1)
 
-Contributors: Rahul · Akshaaj
+Contributors: Rahul · Aksshaj
 
 ## Repo Structure
 ```
