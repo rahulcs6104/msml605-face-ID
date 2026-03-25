@@ -1,0 +1,39 @@
+seed: 42
+split_policy: "70% train split - 15% validation split - 15% test split"
+train_ratio: 0.70
+val_ratio: 0.15
+test_ratio:  0.15
+
+pairs:
+  positive_per_split: 600
+  negative_per_split: 600
+
+data:
+  tfds_name: "lfw"
+  cache_dir: "data/tfds"
+  images_dir: "data/lfw_images"
+
+outputs:
+  manifest_path: "outputs/manifest.json"
+  splits_path: "outputs/splits.json"
+  pairs_dir: "outputs/pairs"
+  bench_dir: "outputs/bench"
+
+evaluation:
+  metric: "cosine"      
+  threshold_min: -1.0
+  threshold_max: 1.0
+  threshold_steps: 200
+  threshold_rule: "max_balanced_accuracy"  
+  image_size: [50, 50]                    
+
+tracking:
+  runs_dir: "outputs/runs"
+
+data_centric:
+  min_images_per_identity: 2    # drop identities with fewer images (no positive pair possible)
+  max_images_per_identity: 10   # cap over-represented identities
+
+benchmark:
+  N: 1000
+  D: 128
