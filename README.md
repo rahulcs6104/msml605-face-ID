@@ -110,3 +110,26 @@ python3 -m pytest tests/ -v
 //////////////////////////////////(milestone 2 , running commands)(rough draft will change later):
 python scripts/create_pairs_v2.py --config configs/m2.yaml
 
+to run the evaluate.py file with different arguments:
+# Run 1 — baseline sweep on val
+  python scripts/evaluate.py --config configs/m2.yaml --split val \\
+      --run-id run_001 --note "baseline cosine sweep val"
+
+  # Run 2 — locked threshold on val  (paste T from Run 1 output)
+  python scripts/evaluate.py --config configs/m2.yaml --split val \\
+      --threshold T --run-id run_002 --note "baseline locked val"
+
+  # Run 3 — baseline final on test
+  python scripts/evaluate.py --config configs/m2.yaml --split test \\
+      --threshold T --run-id run_003 --note "baseline final test"
+
+  # Run 4 — filtered sweep on val
+  python scripts/evaluate.py --config configs/m2.yaml --split val \\
+      --pairs-dir outputs/pairs_v2 --run-id run_004 --data-version filtered \\
+      --note "post data-centric sweep val"
+
+  # Run 5 — filtered final on test
+  python scripts/evaluate.py --config configs/m2.yaml --split test \\
+      --pairs-dir outputs/pairs_v2 --threshold T2 --run-id run_005 \\
+      --data-version filtered --note "post data-centric final test"
+
