@@ -86,10 +86,10 @@ def main():
     img_size  =tuple(ec.get("image_size", [50, 50]))
     pairs_path = os.path.join(pairs_dir, f"{args.split}_pairs.csv")
     if not os.path.exists(pairs_path):
-        sys.exit(f"ERROR ==> {pairs_path} is not found.Please run the pair creation code first.")
+        sys.exit(f"error ==> {pairs_path} is not found.Please run the pair creation code first.")
 
     pairs = load_pairs(pairs_path)
-    print(f"Loaded {len(pairs)} pairs [{args.split}]")
+    print(f"loaded {len(pairs)} pairs [{args.split}]")
     validate_pairs(pairs,check_paths=True)
 
     print(f"Scoring with metric='{metric}',image_size={img_size} ...")
@@ -103,7 +103,7 @@ def main():
         sweep= threshold_sweep(scores, labels, thresholds)
         rule= ec.get("threshold_rule","max_balanced_accuracy")
         selected=select_threshold(sweep, rule=rule)
-        print(f"\n*** Selected threshold ({rule}) : {selected:.6f} ***")
+        print(f"\n*** selected threshold ({rule}) : {selected:.6f} ***")
         print(" ***************   COPY THIS VALUE ==>> you can use it with --threshold for the next run ***************\n")
         sweep_path = os.path.join(runs_dir, f"{args.run_id}_sweep.json")
         with open(sweep_path, "w") as f:
