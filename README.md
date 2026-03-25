@@ -105,3 +105,8 @@ python3 scripts/ingest_dataset.py --config configs/m1.yaml
 python3 scripts/create_pairs.py --config configs/m1.yaml
 python3 scripts/benchmark.py --config configs/m1.yaml
 python3 -m pytest tests/ -v
+
+
+//////////////////////////////////(milestone 2 , running commands)(rough draft will change later):
+python scripts/create_pairs_v2.py --config configs/m2.yaml
+
