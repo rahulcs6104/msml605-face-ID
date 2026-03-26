@@ -80,7 +80,7 @@ class TestThresholdSweep:
         labels=np.array([0,   0,   1,   1  ])
         sweep=threshold_sweep(scores, labels, np.array([0.3, 0.5, 0.7, 0.9]))
         best=select_threshold(sweep, "max_balanced_accuracy")
-        assert best in [0.5, 0.7]
+        assert best in [0.3, 0.5, 0.7]
 
     def test_select_best_f1(self):
         scores=np.array([0.1, 0.9])

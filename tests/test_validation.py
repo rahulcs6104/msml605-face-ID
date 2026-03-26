@@ -4,7 +4,7 @@ from src.validation import validate_pairs
 from src.validation import validate_scores
 from src.validation import validate_threshold
 from src.validation import validate_config
-from src.validation import validate_no_split_leakage
+from src.validation import validate_no_duplicate
 
 def make_pair(left="a.jpg", right="b.jpg", label="1", split="val"):
     return {"left_path": left, "right_path": right, "label": label, "split": split}
@@ -103,8 +103,8 @@ class TestSplitLeakage:
     def test_totally_separate_splits(self):
         val_pairs  = [{"left_path":"a","right_path":"b"}]
         test_pairs = [{"left_path":"c","right_path": "d"}]
-        assert validate_no_split_leakage(val_pairs, test_pairs)
+        assert validate_no_duplicate(val_pairs, test_pairs)
     def test_same_pair_in_both_splits_is_leakage(self):
         shared = {"left_path":"a","right_path": "b"}
         with pytest.raises(ValueError, match="leakage"):
-            validate_no_split_leakage([shared], [shared])
+            validate_no_duplicate([shared], [shared])

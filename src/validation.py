@@ -43,7 +43,7 @@ def validate_config(cfg:dict):
     if threshold_min >= threshold_max:
         raise ValueError(f"threshold_min ({threshold_min}) must be less than the threshold_max ({threshold_max})")
     if e.get("metric", "cosine") not in ("cosine", "euclidean"):
-        raise ValueError(f"Unknown distance metric '{e.get('metric')}' =>please use cosine or euclidean")
+        raise ValueError(f"Unknown metric '{e.get('metric')}' =>please use cosine or euclidean")
     if e.get("threshold_rule","") not in ("max_balanced_accuracy","max_f1"):
         raise ValueError(f"Unknown threshold_rule '{e.get('threshold_rule')}'")
     return True
@@ -55,6 +55,6 @@ def validate_no_duplicate(val_pairs:list,test_pairs:list):# to make sure same pa
     def key(p):
         return (p["left_path"], p["right_path"])
     overlap = {key(p) for p in val_pairs} & {key(p) for p in test_pairs}
-    if overlap == True:
+    if overlap:
         raise ValueError(f"Split duplicate has been detected: {len(overlap)} pair(s) in both val and test.")
     return True

@@ -39,7 +39,7 @@ def select_threshold(sweep_results: list,rule:str= "max_balanced_accuracy"):
         return max(sweep_results, key=lambda x: x["balanced_accuracy"])["threshold"]
     elif rule == "max_f1":
         return max(sweep_results, key=lambda x: x["f1"])["threshold"]
-    raise ValueError(f"threshold rule : '{rule}' not supported , Please only use max_balanced_accuracy or max_f1")
+    raise ValueError(f"Unknown threshold rule : '{rule}' not supported , Please only use max_balanced_accuracy or max_f1")
 
 
 
