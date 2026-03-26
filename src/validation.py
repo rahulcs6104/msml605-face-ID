@@ -56,5 +56,5 @@ def validate_no_duplicate(val_pairs:list,test_pairs:list):# to make sure same pa
         return (p["left_path"], p["right_path"])
     overlap = {key(p) for p in val_pairs} & {key(p) for p in test_pairs}
     if overlap:
-        raise ValueError(f"Split duplicate has been detected: {len(overlap)} pair(s) in both val and test.")
+        raise ValueError(f"Split leakage detected: {len(overlap)} pair(s) in both val and test.")
     return True
