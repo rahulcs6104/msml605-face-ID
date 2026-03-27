@@ -173,5 +173,55 @@
       "threshold_used": 0.778894
     },
     "note": "baseline final test report"
+  },
+  {
+    "run_id": "run_004",
+    "timestamp": "2026-03-27T01:58:24.080482+00:00",
+    "commit": "329dba6",
+    "config": "configs/m2.yaml",
+    "split": "val",
+    "data_version": "filtered",
+    "threshold": 0.738693,
+    "metrics": {
+      "accuracy": 0.5867,
+      "balanced_accuracy": 0.5867,
+      "f1": 0.5967,
+      "tpr": 0.6117,
+      "fpr": 0.4383,
+      "precision": 0.5825,
+      "confusion_matrix": {
+        "TP": 367,
+        "FP": 263,
+        "TN": 337,
+        "FN": 233
+      },
+      "threshold_used": 0.738693
+    },
+    "note": "post data-centric: filtered pairs sweep on val (min 2 imgs, cap 10)"
+  },
+  {
+    "run_id": "run_005",
+    "timestamp": "2026-03-27T01:59:01.284492+00:00",
+    "commit": "329dba6",
+    "config": "configs/m2.yaml",
+    "split": "test",
+    "data_version": "filtered",
+    "threshold": 0.738693,
+    "metrics": {
+      "accuracy": 0.5558,
+      "balanced_accuracy": 0.5558,
+      "f1": 0.5726,
+      "tpr": 0.595,
+      "fpr": 0.4833,
+      "precision": 0.5518,
+      "confusion_matrix": {
+        "TP": 357,
+        "FP": 290,
+        "TN": 310,
+        "FN": 243
+      },
+      "threshold_used": 0.738693
+    },
+    "note": "post data-centric: final test report on filtered pairs"
   }
 ]
