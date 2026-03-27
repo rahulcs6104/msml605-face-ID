@@ -1,4 +1,4 @@
-# MSML 605 — Face Verification (Milestone 1)
+# MSML 605 — Face Verification (Milestone 1) (edit :updated with Milstone 2 , scroll down)
 
 Contributors: Rahul · Aksshaj
 
@@ -119,13 +119,17 @@ We also performed a data-centric improvement as a separate experiment. In this s
 
 Score direction: cosine similarity — higher = more similar = predict same person.
 Threshold rule:maximise balanced accuracy on val split only (never tuned on test).
-Baseline locked threshold: (fill in after running run_001, e.g. `0.XXXX`)
+Baseline locked threshold: (fill in after running run_001, e.g. `0.778894`)
 Report: `reports/milestone2_report.pdf`
 
-//////////////////////////////////(milestone 2 , running commands)(rough draft will change later):
+## Commands to run
+```
+pytest tests/ -v
+```
+```
 python scripts/create_pairs_v2.py --config configs/m2.yaml
+```
 
-to run the evaluate.py file with different arguments:
 # Run 1 — baseline sweep on val
 ```
   python scripts/evaluate.py --config configs/m2.yaml --split val \
