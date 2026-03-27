@@ -135,8 +135,9 @@ to run the evaluate.py file with different arguments:
 
   # Run 2 — locked threshold on val  (paste T from Run 1 output)
 ```
-  python scripts/evaluate.py --config configs/m2.yaml --split val \\
-      --threshold T --run-id run_002 --note "baseline locked val"
+  python scripts/evaluate.py --config configs/m2.yaml --split val \
+    --threshold T --run-id run_002 --data-version baseline \
+    --note "baseline locked threshold evaluation on val"
 ```
 
 make sure to copy the threshold value that comes form the run one command , we will be using that for run 2 and run 3
@@ -145,23 +146,26 @@ replace T with the threshold value we got from run 1
 
   # Run 3 — baseline final on test
 ```
-  python scripts/evaluate.py --config configs/m2.yaml --split test \\
-      --threshold T --run-id run_003 --note "baseline final test"
+  python scripts/evaluate.py --config configs/m2.yaml --split test \
+    --threshold T --run-id run_003 --data-version baseline \
+    --note "baseline final test report"
 ```
 
   # Run 4 — filtered sweep on val
 ```
-  python scripts/evaluate.py --config configs/m2.yaml --split val \\
-      --pairs-dir outputs/pairs_v2 --run-id run_004 --data-version filtered \\
-      --note "post data-centric sweep val"
+python scripts/evaluate.py --config configs/m2.yaml --split val \
+    --pairs-dir outputs/pairs_v2 \
+    --run-id run_004 --data-version filtered \
+    --note "post data-centric: filtered pairs sweep on val (min 2 imgs, cap 10)"
 ```
 Once again copy the threshold value that we get from run 4 and use it in place of T2 for run 5
 
   # Run 5 — filtered final on test
 ```
-  python scripts/evaluate.py --config configs/m2.yaml --split test \\
-      --pairs-dir outputs/pairs_v2 --threshold T2 --run-id run_005 \\
-      --data-version filtered --note "post data-centric final test"
+python scripts/evaluate.py --config configs/m2.yaml --split test \
+    --pairs-dir outputs/pairs_v2 --threshold T2 \
+    --run-id run_005 --data-version filtered \
+    --note "post data-centric: final test report on filtered pairs
 ```
 
 ---

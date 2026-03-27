@@ -1,7 +1,7 @@
 {
   "run_id": "run_004",
-  "timestamp": "2026-03-27T01:58:24.080482+00:00",
-  "commit": "329dba6",
+  "timestamp": "2026-03-27T02:58:18.075905+00:00",
+  "commit": "e46bcd6",
   "config": "configs/m2.yaml",
   "split": "val",
   "data_version": "filtered",
