@@ -124,8 +124,9 @@ Report: `reports/milestone2_report.pdf`
 
 ## Commands to run
 ```
-pytest tests/ -v
+PYTHONPATH=. pytest tests/ -v 
 ```
+
 ```
 python scripts/create_pairs_v2.py --config configs/m2.yaml
 ```
@@ -170,9 +171,4 @@ python scripts/evaluate.py --config configs/m2.yaml --split test \
     --pairs-dir outputs/pairs_v2 --threshold T2 \
     --run-id run_005 --data-version filtered \
     --note "post data-centric: final test report on filtered pairs
-```
-
----
-# 4. Run all tests
-pytest tests/ -v
 ```
