@@ -107,9 +107,12 @@ python3 scripts/benchmark.py --config configs/m1.yaml
 PYTHONPATH=. pytest tests/ -v
 
 python scripts/create_pairs_v2.py --config configs/m2.yaml
+```
 
-Milestone - 2:
-What it does
+# Milestone - 2:
+
+## What we did
+
 We built a proper evaluation process on top of the model from Milestone 1. We used cosine similarity scores on LFW image pairs and tested different threshold values on the validation dataset. We selected the threshold that gave like a balanced accuracy and we used that same threshold to report the final results on the test Dataset .
 
 We also performed a data-centric improvement as a separate experiment. In this step we removed identities that had only one image and limited identities with too many images to a maximum of 10. This helped make the dataset more balanced and we tracked this as a separate run.
@@ -124,26 +127,42 @@ python scripts/create_pairs_v2.py --config configs/m2.yaml
 
 to run the evaluate.py file with different arguments:
 # Run 1 — baseline sweep on val
-  python scripts/evaluate.py --config configs/m2.yaml --split val \\
-      --run-id run_001 --note "baseline cosine sweep val"
+```
+  python scripts/evaluate.py --config configs/m2.yaml --split val \
+    --run-id run_001 --data-version baseline \
+    --note "baseline cosine pixel similarity threshold sweep on val"
+```
 
   # Run 2 — locked threshold on val  (paste T from Run 1 output)
+```
   python scripts/evaluate.py --config configs/m2.yaml --split val \\
       --threshold T --run-id run_002 --note "baseline locked val"
+```
+
+make sure to copy the threshold value that comes form the run one command , we will be using that for run 2 and run 3
+
+replace T with the threshold value we got from run 1
 
   # Run 3 — baseline final on test
+```
   python scripts/evaluate.py --config configs/m2.yaml --split test \\
       --threshold T --run-id run_003 --note "baseline final test"
+```
 
   # Run 4 — filtered sweep on val
+```
   python scripts/evaluate.py --config configs/m2.yaml --split val \\
       --pairs-dir outputs/pairs_v2 --run-id run_004 --data-version filtered \\
       --note "post data-centric sweep val"
+```
+Once again copy the threshold value that we get from run 4 and use it in place of T2 for run 5
 
   # Run 5 — filtered final on test
+```
   python scripts/evaluate.py --config configs/m2.yaml --split test \\
       --pairs-dir outputs/pairs_v2 --threshold T2 --run-id run_005 \\
       --data-version filtered --note "post data-centric final test"
+```
 
 ---
 # 4. Run all tests
