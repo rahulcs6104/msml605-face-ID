@@ -1,0 +1,227 @@
+[
+  {
+    "run_id": "run_001",
+    "timestamp": "2026-03-27T01:50:17.093051+00:00",
+    "commit": "14b8bc3",
+    "config": "configs/m2.yaml",
+    "split": "val",
+    "data_version": "baseline",
+    "threshold": 0.778894,
+    "metrics": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "f1": 0.0,
+      "tpr": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "confusion_matrix": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 0,
+        "FN": 0
+      },
+      "threshold_used": 0.778894
+    },
+    "note": "baseline cosine pixel similarity threshold sweep on val"
+  },
+  {
+    "run_id": "run_002",
+    "timestamp": "2026-03-27T01:51:25.326238+00:00",
+    "commit": "14b8bc3",
+    "config": "configs/m2.yaml",
+    "split": "val",
+    "data_version": "baseline",
+    "threshold": 0.778894,
+    "metrics": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "f1": 0.0,
+      "tpr": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "confusion_matrix": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 0,
+        "FN": 0
+      },
+      "threshold_used": 0.778894
+    },
+    "note": "baseline locked threshold evaluation on val"
+  },
+  {
+    "run_id": "run_003",
+    "timestamp": "2026-03-27T01:51:50.513482+00:00",
+    "commit": "14b8bc3",
+    "config": "configs/m2.yaml",
+    "split": "test",
+    "data_version": "baseline",
+    "threshold": 0.778894,
+    "metrics": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "f1": 0.0,
+      "tpr": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "confusion_matrix": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 0,
+        "FN": 0
+      },
+      "threshold_used": 0.778894
+    },
+    "note": "baseline final test report"
+  },
+  {
+    "run_id": "run_001",
+    "timestamp": "2026-03-27T01:54:45.782134+00:00",
+    "commit": "14b8bc3",
+    "config": "configs/m2.yaml",
+    "split": "val",
+    "data_version": "baseline",
+    "threshold": 0.778894,
+    "metrics": {
+      "accuracy": 0.5617,
+      "balanced_accuracy": 0.5617,
+      "f1": 0.4923,
+      "tpr": 0.425,
+      "fpr": 0.3017,
+      "precision": 0.5849,
+      "confusion_matrix": {
+        "TP": 255,
+        "FP": 181,
+        "TN": 419,
+        "FN": 345
+      },
+      "threshold_used": 0.778894
+    },
+    "note": "baseline cosine pixel similarity threshold sweep on val"
+  },
+  {
+    "run_id": "run_001",
+    "timestamp": "2026-03-27T01:55:14.373179+00:00",
+    "commit": "14b8bc3",
+    "config": "configs/m2.yaml",
+    "split": "val",
+    "data_version": "baseline",
+    "threshold": 0.778894,
+    "metrics": {
+      "accuracy": 0.5617,
+      "balanced_accuracy": 0.5617,
+      "f1": 0.4923,
+      "tpr": 0.425,
+      "fpr": 0.3017,
+      "precision": 0.5849,
+      "confusion_matrix": {
+        "TP": 255,
+        "FP": 181,
+        "TN": 419,
+        "FN": 345
+      },
+      "threshold_used": 0.778894
+    },
+    "note": "baseline cosine pixel similarity threshold sweep on val"
+  },
+  {
+    "run_id": "run_002",
+    "timestamp": "2026-03-27T01:55:54.092959+00:00",
+    "commit": "14b8bc3",
+    "config": "configs/m2.yaml",
+    "split": "val",
+    "data_version": "baseline",
+    "threshold": 0.778894,
+    "metrics": {
+      "accuracy": 0.5617,
+      "balanced_accuracy": 0.5617,
+      "f1": 0.4923,
+      "tpr": 0.425,
+      "fpr": 0.3017,
+      "precision": 0.5849,
+      "confusion_matrix": {
+        "TP": 255,
+        "FP": 181,
+        "TN": 419,
+        "FN": 345
+      },
+      "threshold_used": 0.778894
+    },
+    "note": "baseline locked threshold evaluation on val"
+  },
+  {
+    "run_id": "run_003",
+    "timestamp": "2026-03-27T01:56:05.240168+00:00",
+    "commit": "14b8bc3",
+    "config": "configs/m2.yaml",
+    "split": "test",
+    "data_version": "baseline",
+    "threshold": 0.778894,
+    "metrics": {
+      "accuracy": 0.5958,
+      "balanced_accuracy": 0.5958,
+      "f1": 0.548,
+      "tpr": 0.49,
+      "fpr": 0.2983,
+      "precision": 0.6216,
+      "confusion_matrix": {
+        "TP": 294,
+        "FP": 179,
+        "TN": 421,
+        "FN": 306
+      },
+      "threshold_used": 0.778894
+    },
+    "note": "baseline final test report"
+  },
+  {
+    "run_id": "run_004",
+    "timestamp": "2026-03-27T01:58:24.080482+00:00",
+    "commit": "329dba6",
+    "config": "configs/m2.yaml",
+    "split": "val",
+    "data_version": "filtered",
+    "threshold": 0.738693,
+    "metrics": {
+      "accuracy": 0.5867,
+      "balanced_accuracy": 0.5867,
+      "f1": 0.5967,
+      "tpr": 0.6117,
+      "fpr": 0.4383,
+      "precision": 0.5825,
+      "confusion_matrix": {
+        "TP": 367,
+        "FP": 263,
+        "TN": 337,
+        "FN": 233
+      },
+      "threshold_used": 0.738693
+    },
+    "note": "post data-centric: filtered pairs sweep on val (min 2 imgs, cap 10)"
+  },
+  {
+    "run_id": "run_005",
+    "timestamp": "2026-03-27T01:59:01.284492+00:00",
+    "commit": "329dba6",
+    "config": "configs/m2.yaml",
+    "split": "test",
+    "data_version": "filtered",
+    "threshold": 0.738693,
+    "metrics": {
+      "accuracy": 0.5558,
+      "balanced_accuracy": 0.5558,
+      "f1": 0.5726,
+      "tpr": 0.595,
+      "fpr": 0.4833,
+      "precision": 0.5518,
+      "confusion_matrix": {
+        "TP": 357,
+        "FP": 290,
+        "TN": 310,
+        "FN": 243
+      },
+      "threshold_used": 0.738693
+    },
+    "note": "post data-centric: final test report on filtered pairs"
+  }
+]

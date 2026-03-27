@@ -36,4 +36,4 @@ def apply_threshold(scores,threshold):
             ret.append(1)
         else:
             ret.append(0)
-    return ret
+    return np.array(ret, dtype=np.int32)
