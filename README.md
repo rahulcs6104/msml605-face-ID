@@ -108,6 +108,16 @@ PYTHONPATH=. pytest tests/ -v
 
 python scripts/create_pairs_v2.py --config configs/m2.yaml
 
+Milestone - 2:
+What it does
+We built a proper evaluation process on top of the model from Milestone 1. We used cosine similarity scores on LFW image pairs and tested different threshold values on the validation dataset. We selected the threshold that gave like a balanced accuracy and we used that same threshold to report the final results on the test Dataset .
+
+We also performed a data-centric improvement as a separate experiment. In this step we removed identities that had only one image and limited identities with too many images to a maximum of 10. This helped make the dataset more balanced and we tracked this as a separate run.
+
+Score direction: cosine similarity — higher = more similar = predict same person.
+Threshold rule:maximise balanced accuracy on val split only (never tuned on test).
+Baseline locked threshold: (fill in after running run_001, e.g. `0.XXXX`)
+Report: `reports/milestone2_report.pdf`
 
 //////////////////////////////////(milestone 2 , running commands)(rough draft will change later):
 python scripts/create_pairs_v2.py --config configs/m2.yaml
@@ -135,3 +145,7 @@ to run the evaluate.py file with different arguments:
       --pairs-dir outputs/pairs_v2 --threshold T2 --run-id run_005 \\
       --data-version filtered --note "post data-centric final test"
 
+---
+# 4. Run all tests
+pytest tests/ -v
+```
