@@ -3,17 +3,17 @@
   "D": 128,
   "seed": 42,
   "cosine": {
-    "loop_time_s": 0.005151,
-    "vec_time_s": 0.000361,
-    "speedup_x": 14.26,
+    "loop_time_s": 0.009396,
+    "vec_time_s": 0.000697,
+    "speedup_x": 13.47,
     "max_abs_diff": 1.6653345369377348e-16,
     "tolerance": 1e-10,
     "correctness_pass": true
   },
   "euclidean": {
-    "loop_time_s": 0.002782,
-    "vec_time_s": 0.000254,
-    "speedup_x": 10.96,
+    "loop_time_s": 0.002419,
+    "vec_time_s": 0.00024,
+    "speedup_x": 10.09,
     "max_abs_diff": 7.105427357601002e-15,
     "tolerance": 1e-10,
     "correctness_pass": true

@@ -1,25 +1,25 @@
 {
   "run_id": "run_005",
-  "timestamp": "2026-03-27T02:59:08.689625+00:00",
-  "commit": "e46bcd6",
+  "timestamp": "2026-04-16T22:10:51.014285+00:00",
+  "commit": "61cff22",
   "config": "configs/m2.yaml",
   "split": "test",
   "data_version": "filtered",
-  "threshold": 0.738693,
+  "threshold": 0.778894,
   "metrics": {
-    "accuracy": 0.5558,
-    "balanced_accuracy": 0.5558,
-    "f1": 0.5726,
-    "tpr": 0.595,
-    "fpr": 0.4833,
-    "precision": 0.5518,
+    "accuracy": 0.6075,
+    "balanced_accuracy": 0.6075,
+    "f1": 0.5304,
+    "tpr": 0.4433,
+    "fpr": 0.2283,
+    "precision": 0.66,
     "confusion_matrix": {
-      "TP": 357,
-      "FP": 290,
-      "TN": 310,
-      "FN": 243
+      "TP": 266,
+      "FP": 137,
+      "TN": 463,
+      "FN": 334
     },
-    "threshold_used": 0.738693
+    "threshold_used": 0.778894
   },
   "note": "post data-centric: final test report on filtered pairs"
 }

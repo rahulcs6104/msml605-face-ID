@@ -1,0 +1,49 @@
+seed: 42
+split_policy: "70% train - 15% val - 15% test"
+train_ratio: 0.70
+val_ratio:   0.15
+test_ratio:  0.15
+
+pairs:
+  positive_per_split: 600
+  negative_per_split: 600
+
+data:
+  tfds_name: "lfw"
+  cache_dir: "data/tfds"
+  images_dir: "data/lfw_images"
+
+outputs:
+  manifest_path: "outputs/manifest.json"
+  splits_path:   "outputs/splits.json"
+  pairs_dir:     "outputs/pairs"
+  bench_dir:     "outputs/bench"
+
+evaluation:
+  metric: "cosine"
+  threshold_min:   -1.0
+  threshold_max:    1.0
+  threshold_steps:  200
+  threshold_rule:  "max_balanced_accuracy"
+  image_size: [160, 160]
+
+embedding:
+  model: "InceptionResnetV1"
+  pretrained: "vggface2"
+  dimensions: 512
+  face_detection: "mtcnn"
+  face_size: 160
+
+inference:
+  threshold: 0.5      # placeholder — will be updated after Step 10 recalibration
+  score_min: -1.0
+  score_max:  1.0
+
+load_test:
+  max_pairs: 20
+  workers: 4
+  pairs_csv: "outputs/pairs/test_pairs.csv"
+  output: "outputs/load_test_results.json"
+
+tracking:
+  runs_dir: "outputs/runs"

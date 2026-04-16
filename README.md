@@ -170,5 +170,5 @@ Once again copy the threshold value that we get from run 4 and use it in place o
 python scripts/evaluate.py --config configs/m2.yaml --split test \
     --pairs-dir outputs/pairs_v2 --threshold T2 \
     --run-id run_005 --data-version filtered \
-    --note "post data-centric: final test report on filtered pairs
+    --note "post data-centric: final test report on filtered pairs"
 ```

@@ -1,25 +1,25 @@
 {
   "run_id": "run_001",
-  "timestamp": "2026-03-27T03:00:39.301458+00:00",
-  "commit": "e46bcd6",
+  "timestamp": "2026-04-16T22:08:11.767081+00:00",
+  "commit": "61cff22",
   "config": "configs/m2.yaml",
   "split": "val",
   "data_version": "baseline",
-  "threshold": 0.778894,
+  "threshold": 0.708543,
   "metrics": {
-    "accuracy": 0.5617,
-    "balanced_accuracy": 0.5617,
-    "f1": 0.4923,
-    "tpr": 0.425,
-    "fpr": 0.3017,
-    "precision": 0.5849,
+    "accuracy": 0.5458,
+    "balanced_accuracy": 0.5458,
+    "f1": 0.6054,
+    "tpr": 0.6967,
+    "fpr": 0.605,
+    "precision": 0.5352,
     "confusion_matrix": {
-      "TP": 255,
-      "FP": 181,
-      "TN": 419,
-      "FN": 345
+      "TP": 418,
+      "FP": 363,
+      "TN": 237,
+      "FN": 182
     },
-    "threshold_used": 0.778894
+    "threshold_used": 0.708543
   },
   "note": "baseline cosine pixel similarity threshold sweep on val"
 }
