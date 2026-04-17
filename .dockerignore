@@ -1,0 +1,14 @@
+# Ignore large data and local artifacts
+data/
+.venv/
+.git/
+__pycache__/
+*.pyc
+notebooks/
+__MACOSX/
+*.egg-info/
+.pytest_cache/
+
+# Keep outputs/pairs/ (needed for batch CLI), but ignore heavy run artifacts
+outputs/runs/
+outputs/bench/
