@@ -172,3 +172,7 @@ python scripts/evaluate.py --config configs/m2.yaml --split test \
     --run-id run_005 --data-version filtered \
     --note "post data-centric: final test report on filtered pairs"
 ```
+
+
+to be changed later:
+python scripts/load_test.py --config configs/m3.yaml --max-pairs 20 --workers 4
