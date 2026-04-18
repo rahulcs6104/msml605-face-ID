@@ -45,7 +45,7 @@ def main():
     print(f"Workers: {args.workers}")
     print(f"Threshold: {threshold}")
     print(f"Source CSV : {pairs_csv}")
-    print("==================================================\n")
+    print("#########################################################################")n")
 
     results = []
     failures = 0
@@ -79,9 +79,9 @@ def main():
         },
     }
 
-    print("\n==================================================")
+    print("\n#########################################################################")
     print(f"LOAD TEST RESULTS")
-    print("\n==================================================")
+    print("\n#########################################################################")
     print(f"Requests:{summary['total_requests']}")
     print(f"Successful: {summary['successful']}")
     print(f"Failures: {summary['failures']}")
