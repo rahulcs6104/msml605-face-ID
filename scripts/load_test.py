@@ -45,7 +45,7 @@ def main():
     print(f"Workers: {args.workers}")
     print(f"Threshold: {threshold}")
     print(f"Source CSV : {pairs_csv}")
-    print("#########################################################################")n")
+    print("#########################################################################")
 
     results = []
     failures = 0

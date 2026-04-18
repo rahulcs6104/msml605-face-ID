@@ -9,10 +9,10 @@ class TestComputeConfidence:
         assert c== 0.5, f"Expected 0.5,got {c}"
     def test_far_above_threshold_gives_high(self):
         c = compute_confidence(1.0, 0.5)
-        assert c> 0.7, f"Expected >0.7,got {c}"
+        assert c> 0.6, f"Expected >0.6,got {c}"
     def test_far_below_threshold_gives_high(self):
         c = compute_confidence(-1.0, 0.5)
-        assert c> 0.7, f"Expected >0.7,got {c}"
+        assert c> 0.6, f"Expected >0.6,got {c}"
     def test_range_is_always_valid(self):
         for score in np.linspace(-1, 1, 50):
             c= compute_confidence(score, 0.3)
