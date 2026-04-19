@@ -179,22 +179,19 @@ python scripts/load_test.py --config configs/m3.yaml --max-pairs 20 --workers 4
 
 
 
-
----
-
 # Milestone 3 — Embedding-Based Inference & Deployment
 
 ## What we did
 We Replaced the M1/M2 raw-pixel representation with FaceNet embeddings
 (InceptionResnetV1 pretrained on VGGFace2, 512-dimensional vectors).
 The verifier is packaged in Docker, exposed through a CLI, and characterised under concurrent usage via a load test.
-Embedding model: InceptionResnetV1 (FaceNet) via `facenet-pytorch`, pretrained on VGGFace2.
-Face detection:MTCNN (with centre-resize fallback).
+Embedding model: InceptionResnetV1 [FaceNet] via `facenet-pytorch`, pretrained on VGGFace2.
+Face detection : MTCNN (with centre-resize fallback).
 Embedding dimensions: 512.
 Score direction:cosine similarity —higher =more similar=predict same person.
 Threshold: re-selected on val split using max balanced accuracy .
-Operating threshold: (fill in any value, e.g. `0.XXXXXX`)
-Confidence rule:confidence = 0.5 + 0.5 × (|score − threshold|/ max_margin)→range[0.5, 1.0].
+Operating threshold: (fill in any value, e.g. `0.527638`)
+Confidence rule:confidence = 0.5 + 0.5 × (|score−threshold|/max_margin)→range[0.5, 1.0].
 
 
 ## How to Run (Milestone 3)
@@ -245,6 +242,3 @@ docker run --rm -v $(pwd)/data:/app/data face-verify \
 docker run --rm -v $(pwd)/data:/app/data face-verify \
     --pairs-csv outputs/pairs/test_pairs.csv --max-pairs 10
 ```
-
-
----
