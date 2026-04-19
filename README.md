@@ -196,7 +196,15 @@ Confidence rule:confidence = 0.5 + 0.5 × (|score−threshold|/max_margin)→ran
 
 ## How to Run (Milestone 3)
 ### Option A — Local (no Docker)
-## 0. Install dependencies
+
+## 0.0 Start a virtual environment
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## 0.1 Install dependencies
 ```
 pip install -r requirements.txt
 ```
@@ -211,7 +219,7 @@ python scripts/recalibrate.py --config configs/m3.yaml
 ```
 # 3. Single-pair CLI inference
 ```
-python scripts/cli.py --image-a path/to/face1.jpg --image-b path/to/face2.jpg
+python scripts/cli.py --image-a data/lfw_images/Aaron_Eckhart/0000.jpg --image-b data/lfw_images/Aaron_Eckhart/0000.jpg
 ```
 # 4. Batch CLI inference (first 10 test pairs)
 ```
