@@ -234,7 +234,7 @@ python scripts/load_test.py --config configs/m3.yaml --max-pairs 20 --workers 4
 PYTHONPATH=. pytest tests/ -v
 ```
 
-### Option B — Docker
+### Option B — Docker ( running this in mac is taking more than 45 and counting to just do the pip install requirments.txt file)
 # Build image
 ```
 docker build -t face-verify .
