@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import re
 import sys
 import numpy as np
 import yaml
@@ -48,14 +49,23 @@ def main():
     selected=select_threshold(sweep, rule=rule)
 
     print(f"\n###### Selected threshold ({rule}): {selected:.6f} #########")
-    print("####### COPY THIS VALUE and update configs/m3.yaml → inference.threshold #######\n")
-
 
     result = {"threshold": selected,"rule": rule,"n_pairs": n,"representation": "facenet_vggface2_512d","metric": "cosine","score_stats": {"mean": round(float(np.mean(scores)), 6),"std":  round(float(np.std(scores)), 6),"min":  round(float(np.min(scores)), 6),"max":  round(float(np.max(scores)), 6),},}
     os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)
     with open(args.output, "w") as f:
         json.dump(result, f, indent=2)
     print(f"saved the threshold info to ====>> {args.output}")
+
+    with open(args.config, "r") as f:
+        cfg_text = f.read()
+    cfg_text = re.sub(
+        r"(?m)^(\s+threshold:\s*)[-\d.]+",
+        lambda m: m.group(1) + f"{round(selected, 6)}",
+        cfg_text,
+    )
+    with open(args.config, "w") as f:
+        f.write(cfg_text)
+    print(f"auto-updated inference.threshold in {args.config} → {selected:.6f}")
 
 
 if __name__ == "__main__":
