@@ -1,0 +1,79 @@
+{
+  "hardware": {
+    "platform": "macOS-15.6.1-arm64-arm-64bit",
+    "python_version": "3.11.14",
+    "processor": "arm",
+    "cpu_count_logical": 8,
+    "torch_version": "2.2.2",
+    "cuda_available": false,
+    "ram_total_gb": 16.0
+  },
+  "config": "configs/m3.yaml",
+  "stage_latency": {
+    "n_pairs_measured": 20,
+    "preprocessing_mtcnn": {
+      "mean_ms": 48.643,
+      "std_ms": 8.198,
+      "p50_ms": 46.594,
+      "p95_ms": 61.306,
+      "min_ms": 34.814,
+      "max_ms": 68.173
+    },
+    "embedding_facenet": {
+      "mean_ms": 36.839,
+      "std_ms": 3.184,
+      "p50_ms": 35.842,
+      "p95_ms": 42.19,
+      "min_ms": 33.057,
+      "max_ms": 44.052
+    },
+    "scoring_cosine": {
+      "mean_ms": 0.049,
+      "std_ms": 0.003,
+      "p50_ms": 0.048,
+      "p95_ms": 0.053,
+      "min_ms": 0.045,
+      "max_ms": 0.061
+    },
+    "end_to_end": {
+      "mean_ms": 85.531,
+      "std_ms": 9.35,
+      "p50_ms": 85.01,
+      "p95_ms": 100.054,
+      "min_ms": 69.347,
+      "max_ms": 109.965
+    }
+  },
+  "batch_sensitivity": [
+    {
+      "batch_size": 1,
+      "total_ms": 81.69,
+      "per_pair_ms": 81.69,
+      "throughput_pairs_per_sec": 12.241
+    },
+    {
+      "batch_size": 5,
+      "total_ms": 398.48,
+      "per_pair_ms": 79.7,
+      "throughput_pairs_per_sec": 12.548
+    },
+    {
+      "batch_size": 10,
+      "total_ms": 806.85,
+      "per_pair_ms": 80.69,
+      "throughput_pairs_per_sec": 12.394
+    },
+    {
+      "batch_size": 20,
+      "total_ms": 1575.99,
+      "per_pair_ms": 78.8,
+      "throughput_pairs_per_sec": 12.69
+    },
+    {
+      "batch_size": 50,
+      "total_ms": 4270.05,
+      "per_pair_ms": 85.4,
+      "throughput_pairs_per_sec": 11.709
+    }
+  ]
+}
