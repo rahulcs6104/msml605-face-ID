@@ -42,15 +42,18 @@ This will let you know if you have the correct python version (3.11) installed a
 ### 1) virtual environment setup (venv)
 
 **Windows (in powershell)**
-
+```
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+```
 
 **MAC**
+```
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 
 ### to verify:
 
