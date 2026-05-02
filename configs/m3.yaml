@@ -35,7 +35,7 @@ embedding:
   face_size: 160
 
 inference:
-  threshold: 0.547739
+  threshold: 0.577889
   score_min: -1.0
   score_max:  1.0
 

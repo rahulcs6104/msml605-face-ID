@@ -3,14 +3,14 @@
   "successful": 20,
   "failures": 0,
   "workers": 4,
-  "wall_clock_seconds": 3.549,
-  "throughput_pairs_per_sec": 5.64,
+  "wall_clock_seconds": 3.068,
+  "throughput_pairs_per_sec": 6.52,
   "latency_ms": {
-    "mean": 319.47,
-    "median": 265.11,
-    "p95": 584.88,
-    "p99": 592.3,
-    "min": 222.67,
-    "max": 594.16
+    "mean": 169.37,
+    "median": 121.48,
+    "p95": 374.58,
+    "p99": 386.1,
+    "min": 101.31,
+    "max": 388.98
   }
 }

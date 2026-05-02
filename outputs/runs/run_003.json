@@ -1,25 +1,25 @@
 {
   "run_id": "run_003",
-  "timestamp": "2026-04-16T22:09:33.230002+00:00",
-  "commit": "61cff22",
+  "timestamp": "2026-05-02T22:41:07.473248+00:00",
+  "commit": "02274cf",
   "config": "configs/m2.yaml",
   "split": "test",
   "data_version": "baseline",
-  "threshold": 0.708543,
+  "threshold": 0.809045,
   "metrics": {
-    "accuracy": 0.5858,
-    "balanced_accuracy": 0.5858,
-    "f1": 0.6537,
-    "tpr": 0.7817,
-    "fpr": 0.61,
-    "precision": 0.5617,
+    "accuracy": 0.5958,
+    "balanced_accuracy": 0.5958,
+    "f1": 0.4889,
+    "tpr": 0.3867,
+    "fpr": 0.195,
+    "precision": 0.6648,
     "confusion_matrix": {
-      "TP": 469,
-      "FP": 366,
-      "TN": 234,
-      "FN": 131
+      "TP": 232,
+      "FP": 117,
+      "TN": 483,
+      "FN": 368
     },
-    "threshold_used": 0.708543
+    "threshold_used": 0.809045
   },
   "note": "baseline final test report"
 }

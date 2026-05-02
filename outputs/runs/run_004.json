@@ -1,25 +1,25 @@
 {
   "run_id": "run_004",
-  "timestamp": "2026-04-16T22:09:43.058897+00:00",
-  "commit": "61cff22",
+  "timestamp": "2026-05-02T22:41:16.144517+00:00",
+  "commit": "02274cf",
   "config": "configs/m2.yaml",
   "split": "val",
   "data_version": "filtered",
-  "threshold": 0.778894,
+  "threshold": 0.768844,
   "metrics": {
-    "accuracy": 0.57,
-    "balanced_accuracy": 0.57,
-    "f1": 0.4981,
-    "tpr": 0.4267,
-    "fpr": 0.2867,
-    "precision": 0.5981,
+    "accuracy": 0.5867,
+    "balanced_accuracy": 0.5867,
+    "f1": 0.5571,
+    "tpr": 0.52,
+    "fpr": 0.3467,
+    "precision": 0.6,
     "confusion_matrix": {
-      "TP": 256,
-      "FP": 172,
-      "TN": 428,
-      "FN": 344
+      "TP": 312,
+      "FP": 208,
+      "TN": 392,
+      "FN": 288
     },
-    "threshold_used": 0.778894
+    "threshold_used": 0.768844
   },
   "note": "post data-centric: filtered pairs sweep on val (min 2 imgs, cap 10)"
 }

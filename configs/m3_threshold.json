@@ -1,13 +1,13 @@
 {
-  "threshold": 0.547739,
+  "threshold": 0.577889,
   "rule": "max_balanced_accuracy",
   "n_pairs": 1200,
   "representation": "facenet_vggface2_512d",
   "metric": "cosine",
   "score_stats": {
-    "mean": 0.380803,
-    "std": 0.394829,
-    "min": -0.436508,
-    "max": 0.944804
+    "mean": 0.382297,
+    "std": 0.401148,
+    "min": -0.505661,
+    "max": 0.953342
   }
 }
