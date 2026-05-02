@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.9725,
+  "balanced_accuracy": 0.9725,
+  "f1": 0.9717,
+  "tpr": 0.945,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "confusion_matrix": {
+    "TP": 567,
+    "FP": 0,
+    "TN": 600,
+    "FN": 33
+  },
+  "threshold_used": 0.547739,
+  "n_pairs": 1200,
+  "split": "test",
+  "model": "facenet_vggface2_512d"
+}
