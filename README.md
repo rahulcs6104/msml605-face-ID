@@ -253,3 +253,127 @@ docker run --rm -v $(pwd)/data:/app/data face-verify \
 docker run --rm -v $(pwd)/data:/app/data face-verify \
     --pairs-csv outputs/pairs/test_pairs.csv --max-pairs 10
 ```
+
+
+
+---
+
+# Milestone 4 — System Audit, Profiling & Final Release
+
+## What we did
+
+We finalized the embedding-based face verification system from Milestone 3 and completed a full responsible-ML audit:
+
+- **Fixed** the threshold sync bug: `recalibrate.py` now auto-updates `configs/m3.yaml` so the CLI always uses the freshly calibrated threshold.
+- **Profiled** the system on CPU hardware, measuring preprocessing (MTCNN), embedding (FaceNet), and scoring (cosine) latency separately, plus batch-size sensitivity.
+- **Evaluated** the final M3 system on the test split to obtain FaceNet-based accuracy, F1, precision, and recall metrics.
+- **Wrote** a System Card documenting intended use, failure modes, fairness-related risks, and operational constraints.
+- **Tagged** the reproducible final release as `v1.0-final`.
+
+## Final System Snapshot
+
+Model => InceptionResnetV1 (FaceNet), VGGFace2 pretrained 
+Embedding size  => 512-dimensional L2-normalized
+Score metric => Cosine similarity ∈ [−1, 1]
+Operating threshold => 0.547739 (max balanced accuracy, val split)
+Dataset => LFW (70/15/15 train/val/test split)
+Pairs per split  => 1,200 (600 positive + 600 negative)
+Final release tag => `v1.0-final`
+
+## Milestone 4 Artifacts
+
+
+System Card (PDF) => `reports/system_card_m4.pdf`
+Profiling report => `reports/profiling_report.md` |
+Reproducibility checklist => `reports/reproducibility_checklist.md` |
+Profiling results (JSON) => `outputs/profiling_results.json` |
+M3 test metrics (JSON) => `outputs/m3_test_metrics.json` |
+
+## How to Run (Milestone 4)
+
+See `reports/reproducibility_checklist.md` for the full checklist.
+
+### Environment setup
+
+**macOS:**
+```bash
+git clone https://github.com/rahulcs6104/msml605-face-ID
+cd msml605-face-ID
+git checkout v1.0-final
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+**Windows:**
+```powershell
+git clone <your-repo-url> msml605-face-ID
+cd msml605-face-ID
+git checkout v1.0-final
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+### Ingest data and create pairs
+```bash
+python scripts/ingest_dataset.py --config configs/m1.yaml
+python scripts/create_pairs.py   --config configs/m1.yaml
+```
+
+### Re-calibrate threshold
+```bash
+python scripts/recalibrate.py --config configs/m3.yaml
+```
+
+### Single-pair CLI inference
+```bash
+python scripts/cli.py \
+  --image-a data/lfw_images/Aaron_Eckhart/0000.jpg \
+  --image-b data/lfw_images/Aaron_Eckhart/0000.jpg
+```
+
+### Batch CLI inference => 10 test pairs
+```bash
+python scripts/cli.py \
+  --pairs-csv outputs/pairs/test_pairs.csv \
+  --max-pairs 10
+```
+
+### Run M3 test evaluation - FaceNet metrics
+```bash
+python scripts/evaluate_m3_test.py --config configs/m3.yaml
+```
+
+### Run latency profiling
+```bash
+python scripts/profile_latency.py \
+  --config configs/m3.yaml \
+  --n-pairs 20 \
+  --output outputs/profiling_results.json
+```
+
+### Run all tests
+```bash
+PYTHONPATH=. pytest tests/ -v
+```
+
+### Docker (Option B)
+```bash
+docker build -t face-verify .
+
+# Single-pair
+docker run --rm -v $(pwd)/data:/app/data face-verify \
+  --image-a data/lfw_images/Aaron_Eckhart/0000.jpg \
+  --image-b data/lfw_images/Aaron_Eckhart/0000.jpg
+
+# Batch
+docker run --rm \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/outputs:/app/outputs \
+  face-verify \
+  --pairs-csv outputs/pairs/test_pairs.csv \
+  --max-pairs 10
+```
+
+See `reports/reproducibility_checklist.md` for the full checklist.
